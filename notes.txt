@@ -1,0 +1,5 @@
+git diff chapter3.txt
+
+`git diff chapter3.txt` will show the **unstaged changes** 
+you’ve made to `chapter3.txt` compared to the last committed 
+version.
