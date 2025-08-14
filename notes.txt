@@ -1,9 +1,49 @@
-git status
+**GIT WORKFLOW**
+---------------------
+1. **Working Directory** – The place where you create or modify files locally.
 
-git checkout chapter3.txt
+2. **Staging Area** – Temporary holding area where you add changes using:
 
-git diff chapter3.txt
+        ```bash
+        git add <file_name>
+        ```
 
-`git diff chapter3.txt` will show the **unstaged changes** 
-you’ve made to `chapter3.txt` compared to the last committed 
-version.
+        ```bash
+        git status  :   git status shows the current state of your working 
+        ```             directory and staging area
+
+        ```bash
+        git rm --cached -r .    :   removes all tracked files from the staging 
+        ```                         area but keeps them in your working directory.
+
+3. **Local Repository** – Stores committed changes in your local `.git` database using:
+
+        ```bash
+        git commit -m "message"
+        ```
+4. **Remote Repository** – Stores your code on platforms like GitHub.
+
+        ```bash
+        git push -u <remote name> <branch name>
+        ```
+
+            * **`-u`** → Sets the default upstream branch, so future pushes can be done with just `git push`.
+            * **`<remote name>`** → Usually `origin` (the name of your remote repo).
+            * **`<branch name>`** → The branch you want to push (e.g., `main` or `master`).
+
+        **Example:**
+            ```bash
+            git push -u origin main
+            ```
+
+        ```bash
+        git checkout <file_name> :  `git checkout chapter3.txt` replaces the file `chapter3.txt` in your 
+        ```                         working directory with the version from the last commit (HEAD).
+        
+            Meaning:
+                * Any changes you made to `chapter3.txt` that weren’t committed will be **lost**.
+                * It’s a way to **discard local changes** for that file.
+        
+        ```bash
+        git diff chapter3.txt   :   `git diff chapter3.txt` will show the **unstaged changes** 
+        ```                         you’ve made to `chapter3.txt` compared to the last committed version.
